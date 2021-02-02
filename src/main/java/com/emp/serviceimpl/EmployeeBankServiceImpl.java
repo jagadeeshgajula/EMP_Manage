@@ -1,8 +1,9 @@
-package com.emp.service;
+package com.emp.serviceimpl;
 
 import java.util.List;
 
 import com.emp.model.EmployeeBankModel;
+import com.emp.service.EmployeeBankService;
 
 public class EmployeeBankServiceImpl implements EmployeeBankService {
 

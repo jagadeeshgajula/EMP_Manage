@@ -1,4 +1,4 @@
-package com.emp.service;
+package com.emp.serviceimpl;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.emp.model.EmployeePayslipsModel;
 import com.emp.repo.EmployeePayslipsRepository;
+import com.emp.service.EmployeePayslipsService;
 
 public class EmployeePayslipsServiceImpl implements EmployeePayslipsService {
 
