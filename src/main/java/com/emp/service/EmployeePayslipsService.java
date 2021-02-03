@@ -12,7 +12,7 @@ public interface EmployeePayslipsService {
 	public EmployeePayslipsModel savePayslips(EmployeePayslipsModel employeePayslips);
 	
 	//update employee payslip details and return updated record
-	public EmployeePayslipsModel updatePayslips(EmployeePayslipsModel employeePayslips);
+	public EmployeePayslipsModel updatePayslips(EmployeePayslipsModel employeePayslips) throws Exception;
 
 	//delete employee payslip details by Id
 	public void deletePayslips(Integer id);

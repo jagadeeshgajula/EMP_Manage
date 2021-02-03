@@ -10,7 +10,7 @@ public interface EmployeeBankService {
 	public EmployeeBankModel saveBankDetails(EmployeeBankModel employeeBankDetails);
 	
 	//update employee bank details and return updated record
-	public EmployeeBankModel updateBankDetails(EmployeeBankModel employeeBankDetails);
+	public EmployeeBankModel updateBankDetails(EmployeeBankModel employeeBankDetails) throws Exception;
 
 	//delete employee bank details by Id
 	public void deleteBankDetails(Integer id);
