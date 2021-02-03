@@ -21,7 +21,7 @@ public class EmployeeBankModel {
 	String bankName;
 	
 	@Column(name="bank_account_no")
-	Integer bankAccountNo;
+	String bankAccountNo;
 	
 	@Column(name="acccount_type")
 	String accountType;
