@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,25 +26,21 @@ public class EmployeeBankController {
 	// incremented primary key:id
 	@PostMapping("/savebank")
 	public EmployeeBankModel saveBank(@RequestBody EmployeeBankModel empBank) {
-		empBankService.saveBankDetails(empBank);
+		empBank = empBankService.saveBankDetails(empBank);
 		return empBank;
 	}
 
 	// checks if the record exists if so then update the old record and return
 	// updated record
 	@PutMapping("/updatebank")
-	public EmployeeBankModel updateBank(EmployeeBankModel empBank) throws Exception {
-		empBank = empBankService.getBankDetailsById(empBank.getEmployeeBankId());
-		if (Objects.isNull(empBank)) {
-
-			throw new Exception("Data not found");
-		}
+	public EmployeeBankModel updateBank(@RequestBody EmployeeBankModel empBank) throws Exception {
+		empBank = empBankService.updateBankDetails(empBank);
 		return empBank;
 	}
 
 	// delete the bank by id
 	@DeleteMapping("/deletebank")
-	public void deleteBankDetails(Integer id) {
+	public void deleteBankDetails(@RequestParam Integer id) {
 		empBankService.deleteBankDetails(id);
 
 	}
@@ -57,7 +54,7 @@ public class EmployeeBankController {
 
 	// return specific bank details by Id
 	@GetMapping("/getbankbyid")
-	public EmployeeBankModel getBankDetailsById(Integer id) {
+	public EmployeeBankModel getBankDetailsById(@RequestParam Integer id) {
 		EmployeeBankModel empBank = empBankService.getBankDetailsById(id);
 		return empBank;
 	}
