@@ -27,13 +27,12 @@ public class EmployeePayslipsServiceImpl implements EmployeePayslipsService {
 	//checks if the record exists if so then update the old record and return updated record
 	@Override
 	public EmployeePayslipsModel updatePayslips(EmployeePayslipsModel empPayslips) throws Exception {
-		empPayslips = empPayslipsRepo.findById(empPayslips.getPayslipId()).get();
-		if(Objects.isNull(empPayslips)) {
-			
+		EmployeePayslipsModel empPayslipRes = empPayslipsRepo.findById(empPayslips.getPayslipId()).get();
+		if(Objects.isNull(empPayslipRes)) {
 			throw new Exception("Data not found");
 	}
-		empPayslipsRepo.save(empPayslips);
-		return empPayslips;
+		empPayslipRes = empPayslipsRepo.save(empPayslips);
+		return empPayslipRes;
 	}
 
 	//delete the payslip by id
