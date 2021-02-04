@@ -30,7 +30,7 @@ public class EmployeeBankServiceImpl implements EmployeeBankService {
 	@Override
 	public EmployeeBankModel updateBankDetails(EmployeeBankModel empBank) throws Exception {
 		EmployeeBankModel empBankRes = empBankRepo.findById(empBank.getEmployeeBankId()).get();
-		System.out.println("in update method");
+//		System.out.println("in update method");
 		if (Objects.isNull(empBankRes)) {
 			throw new Exception("Data not found");
 		}

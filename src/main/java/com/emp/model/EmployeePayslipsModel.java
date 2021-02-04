@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 
 import lombok.Data;
 
-@Entity
+@Entity(name="employee_payslips")
 @Data
 public class EmployeePayslipsModel {
 	

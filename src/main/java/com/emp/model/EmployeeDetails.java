@@ -27,7 +27,7 @@ public class EmployeeDetails {
 	@Column(name="last_name")
 	String lastName;
 	
-	@Column(name="phNo")
+	@Column(name="ph_no")
 	String phoneNumber;
 	
 	@Column(name="dob")
