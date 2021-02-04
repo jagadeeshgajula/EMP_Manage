@@ -2,7 +2,6 @@ package com.emp.service;
 
 import java.util.List;
 
-import com.emp.model.EmployeeBankModel;
 import com.emp.model.EmployeePayslipsModel;
 
 public interface EmployeePayslipsService {

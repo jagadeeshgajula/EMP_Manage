@@ -1,7 +1,6 @@
 package com.emp.controller;
 
 import java.util.List;
-import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,7 +32,7 @@ public class EmployeePayslipsController {
 	// updated record
 	@PutMapping("/updatepayslips")
 	public EmployeePayslipsModel updatePayslips(@RequestBody EmployeePayslipsModel empPayslips) throws Exception {
-		empPayslipsService.updatePayslips(empPayslips);
+		empPayslips = empPayslipsService.updatePayslips(empPayslips);
 		return empPayslips;
 	}
 
