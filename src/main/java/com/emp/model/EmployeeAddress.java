@@ -19,10 +19,10 @@ public class EmployeeAddress {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer addressId;
 	
-	@Column(name="street1")
+	@Column(name="street_1")
 	String streetOne;
 	
-	@Column(name="street2")
+	@Column(name="street_2")
 	String streetTwo;
 	
 	@Column(name="city")
@@ -40,4 +40,5 @@ public class EmployeeAddress {
 	@OneToOne
 	@JoinColumn(name="employee_Id")
 	EmployeeDetails employeeId;
+
 }

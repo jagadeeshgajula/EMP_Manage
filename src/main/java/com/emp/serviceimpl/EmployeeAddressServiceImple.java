@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.emp.model.EmployeeAddress;
+import com.emp.model.EmployeeDetails;
 import com.emp.repo.EmployeeAddressRepositiry;
 import com.emp.service.EmployeeAddressService;
 
@@ -42,14 +43,15 @@ public class EmployeeAddressServiceImple implements EmployeeAddressService {
 
 	@Override
 	public List<EmployeeAddress> getAllEmployeeAddress() {
-		// TODO Auto-generated method stub
+	
 		return employeeAddressRepositiry.findAll();
 	}
 
 	@Override
-	public EmployeeAddress getByEmployeeAddressId(Integer EmployeeAddressId) {
-		
-		return employeeAddressRepositiry.findById(EmployeeAddressId).get();
+	public List<EmployeeAddress> getEmployeeAddressByEmployeeId(Integer empId) {
+		EmployeeDetails empDetail = new EmployeeDetails();
+		empDetail.setEmployeeId(empId);
+		return employeeAddressRepositiry.findByEmployeeId(empDetail);
 	}
 
 }

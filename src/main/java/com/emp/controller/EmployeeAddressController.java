@@ -46,8 +46,8 @@ public class EmployeeAddressController {
 	}
 	
 	@GetMapping("/getEmployeeAddressById")
-	public EmployeeAddress getEmployeeAddressById(@RequestParam Integer employeeAddressId) {
-		EmployeeAddress EmployeeAddress = employeeAddressService.getByEmployeeAddressId(employeeAddressId);
+	public List<EmployeeAddress> getEmployeeAddressById(@RequestParam Integer employeeAddressId) {
+		List<EmployeeAddress> EmployeeAddress = employeeAddressService.getEmployeeAddressByEmployeeId(employeeAddressId);
 		return EmployeeAddress;
 	}
 }

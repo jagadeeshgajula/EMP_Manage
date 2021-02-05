@@ -2,6 +2,7 @@ package com.emp.service;
 
 import java.util.List;
 
+import com.emp.model.EmployeeDetails;
 import com.emp.model.EmployeeRoles;
 
 public interface EmployeeRolesService {
@@ -16,4 +17,6 @@ public interface EmployeeRolesService {
 	public List<EmployeeRoles> getAllEmployeeRolls();
 	
 	public EmployeeRoles getByEmployeeRollId(Integer employeeRoleId);
+	
+//	public List<EmployeeDetails> getAllEmployeesByRollName(EmployeeRoles rollName);
 }

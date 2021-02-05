@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emp.model.EmployeeDetails;
+import com.emp.model.EmployeeRoles;
 import com.emp.service.EmployeeDetailsService;
 
 @RestController
@@ -49,5 +50,23 @@ public class EmployeeDetailsController {
 	public EmployeeDetails getEmployeeDetailsById(@RequestParam Integer employeeDetailId) {
 		EmployeeDetails EmployeeDetails = employeeDetailsService.getByEmployeeDetailsId(employeeDetailId);
 		return EmployeeDetails;
+	}
+	
+	@GetMapping("/getAllEmployeesByRollName")
+	public List<EmployeeDetails> getAllEmployeesByRollName(@RequestParam String rollName) {
+		return employeeDetailsService.getAllEmployeesByRollName(rollName);
+		
+	}
+	
+	@GetMapping("/getAllEmployeeDetailsByProjectName")
+	public List<EmployeeDetails> getAllEmployeeDetailsByProjectName(@RequestParam String projectName) {
+		return employeeDetailsService.getAllEmployeeDetailsByProjectName(projectName);
+		
+	}
+	
+	@GetMapping("/getAllEmployeesByRollAndProjectName")
+	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(@RequestParam String rollName, String projectName) {
+		return employeeDetailsService.getAllEmployeesByRollAndProjectName(rollName, projectName);
+		
 	}
 }

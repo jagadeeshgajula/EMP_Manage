@@ -56,5 +56,6 @@ public class EmployeeBankController {
 		EmployeeBankModel empBank = empBankService.getBankDetailsById(id);
 		return empBank;
 	}
+	
 
 }
