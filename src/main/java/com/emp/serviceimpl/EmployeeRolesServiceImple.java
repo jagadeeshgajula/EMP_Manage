@@ -6,7 +6,6 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.emp.model.EmployeeDetails;
 import com.emp.model.EmployeeRoles;
 import com.emp.repo.EmployeeRolesRepository;
 import com.emp.service.EmployeeRolesService;
@@ -52,13 +51,5 @@ public class EmployeeRolesServiceImple implements EmployeeRolesService {
 		
 		return employeeRolesRepository.findById(employeeRoleId).get();
 	}
-//
-//	@Override
-//	public List<String> getAllEmployeesByRollName(EmployeeRoles rollName) {
-//		return ((EmployeeRolesService) employeeRolesRepository).getAllEmployeesByRollName(rollName);
-//		
-//	}
-	
-
 
 }

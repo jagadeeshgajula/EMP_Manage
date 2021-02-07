@@ -25,15 +25,15 @@ public class EmployeeAddressServiceImple implements EmployeeAddressService {
 
 	@Override
 	public EmployeeAddress updateEmployeeAddress(EmployeeAddress EmployeeAddress) throws Exception {
-		EmployeeAddress EmployeeAddressRes = employeeAddressRepositiry.findById(EmployeeAddress.getAddressId()).get();
-		if(Objects.isNull(EmployeeAddressRes))
+		EmployeeAddress employeeAddressRes = employeeAddressRepositiry.findById(EmployeeAddress.getAddressId()).get();
+		if(Objects.isNull(employeeAddressRes))
 		{
 			throw new Exception("Data Not Found");
 		}
 		
-		EmployeeAddressRes = employeeAddressRepositiry.save(EmployeeAddress);
+		employeeAddressRes = employeeAddressRepositiry.save(EmployeeAddress);
 		
-		return EmployeeAddressRes;
+		return employeeAddressRes;
 	}
 
 	@Override
@@ -43,8 +43,14 @@ public class EmployeeAddressServiceImple implements EmployeeAddressService {
 
 	@Override
 	public List<EmployeeAddress> getAllEmployeeAddress() {
-	
+		// TODO Auto-generated method stub
 		return employeeAddressRepositiry.findAll();
+	}
+
+	@Override
+	public EmployeeAddress getByEmployeeAddressId(Integer EmployeeAddressId) {
+		
+		return employeeAddressRepositiry.findById(EmployeeAddressId).get();
 	}
 
 	@Override

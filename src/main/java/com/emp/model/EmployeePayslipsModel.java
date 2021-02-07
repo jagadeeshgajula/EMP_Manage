@@ -42,11 +42,11 @@ public class EmployeePayslipsModel {
 //	Foreign Key
 	@OneToOne
 	@JoinColumn(name="employee_bank_id")
-	EmployeeBankModel employeeBankId;
+	EmployeeBankModel employeeBank;
 	
 //	Foreign Key
 	@OneToOne
 	@JoinColumn(name="employee_id")
-	EmployeeDetails employeeId;
+	EmployeeDetails employeeDetail;
 
 }

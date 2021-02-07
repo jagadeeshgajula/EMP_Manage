@@ -1,7 +1,5 @@
 package com.emp.serviceimpl;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
@@ -12,7 +10,6 @@ import com.emp.model.EmployeeDetails;
 import com.emp.model.EmployeeRoles;
 import com.emp.repo.EmployeeDetailsRepository;
 import com.emp.service.EmployeeDetailsService;
-import com.emp.service.EmployeeRolesService;
 
 @Service
 public class EmployeeDetailsServiceImple implements EmployeeDetailsService {
@@ -46,7 +43,7 @@ public class EmployeeDetailsServiceImple implements EmployeeDetailsService {
 
 	@Override
 	public List<EmployeeDetails> getAllEmployeeDetails() {
-		// TODO Auto-generated method stub
+	
 		return employeeDetailsRepository.findAll();
 	}
 
@@ -57,10 +54,9 @@ public class EmployeeDetailsServiceImple implements EmployeeDetailsService {
 	}
 
 	@Override
-	public List<EmployeeDetails> getAllEmployeesByRollName(String rollName) {
-		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeesByRollName(rollName);
+	public List<EmployeeDetails> getAllEmployeesByRollName(String roleName) {
+		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeesByRollName(roleName);
 		return empList;
-	
 	}
 
 	@Override
@@ -70,10 +66,9 @@ public class EmployeeDetailsServiceImple implements EmployeeDetailsService {
 	}
 
 	@Override
-	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(String rollName, String projectName) {
-		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeesByRollAndProjectName(rollName, projectName);
+	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(String roleName, String projectName) {
+		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeesByRollAndProjectName(roleName, projectName);
 		return empList;
 	}
 
 }
-

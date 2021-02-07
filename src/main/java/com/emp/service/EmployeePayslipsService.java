@@ -1,5 +1,6 @@
 package com.emp.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.emp.model.EmployeePayslipsModel;
@@ -21,5 +22,11 @@ public interface EmployeePayslipsService {
 
 	//return specific payslip details by Id
 	public EmployeePayslipsModel getPayslipsById(Integer id);
+	
+	public List<EmployeePayslipsModel> getEmployeePaySlipsByEmployeeId(Integer empId);
+	
+	public List<EmployeePayslipsModel> getEmployeePayslipsByGivenDate(LocalDate payslipDate);
+	
+	public List<EmployeePayslipsModel> getEmployeePaySlipsByFromDateAndToDate(LocalDate fromDate, LocalDate toDate);
 
 }

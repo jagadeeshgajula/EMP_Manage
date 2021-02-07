@@ -40,5 +40,4 @@ public class EmployeeAddress {
 	@OneToOne
 	@JoinColumn(name="employee_Id")
 	EmployeeDetails employeeId;
-
 }

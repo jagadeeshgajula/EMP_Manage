@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emp.model.EmployeeDetails;
-import com.emp.model.EmployeeRoles;
 import com.emp.service.EmployeeDetailsService;
 
 @RestController
