@@ -36,5 +36,9 @@ public class EmployeeDetails {
 	@OneToOne
 	@JoinColumn(name="roll_id")
 	EmployeeRoles employeeRole;
+	
+	@OneToOne
+	@JoinColumn(name="project_id")
+	ProjectDetailsModel projectDetail;
 }
 // one to one, one to many, many to one, many to many

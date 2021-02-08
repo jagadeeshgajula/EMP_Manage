@@ -41,13 +41,19 @@ public class EmployeeAddressController {
 	
 	@GetMapping("/getAllEmployeeAddress")
 	public List<EmployeeAddress> getAllEmployeeAddresss() {
-		List<EmployeeAddress> EmployeeAddresssList = employeeAddressService.getAllEmployeeAddress();
-		return EmployeeAddresssList;
+		List<EmployeeAddress> employeeAddresssList = employeeAddressService.getAllEmployeeAddress();
+		return employeeAddresssList;
 	}
 	
 	@GetMapping("/getEmployeeAddressById")
 	public EmployeeAddress getEmployeeAddressById(@RequestParam Integer employeeAddressId) {
-		EmployeeAddress EmployeeAddress = employeeAddressService.getByEmployeeAddressId(employeeAddressId);
-		return EmployeeAddress;
+		EmployeeAddress employeeAddress = employeeAddressService.getByEmployeeAddressId(employeeAddressId);
+		return employeeAddress;
+	}
+	
+	@GetMapping("/getEmployeeAddressByEmployeeId")
+	public List<EmployeeAddress> getEmployeeAddressByEmployeeId(@RequestParam Integer empId) {
+		List<EmployeeAddress> employeeAddress = employeeAddressService.getEmployeeAddressByEmployeeId(empId);
+		return employeeAddress;
 	}
 }

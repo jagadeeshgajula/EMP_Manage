@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.emp.model.EmployeeAddress;
+import com.emp.model.EmployeeDetails;
 import com.emp.repo.EmployeeAddressRepositiry;
 import com.emp.service.EmployeeAddressService;
 
@@ -24,15 +25,15 @@ public class EmployeeAddressServiceImple implements EmployeeAddressService {
 
 	@Override
 	public EmployeeAddress updateEmployeeAddress(EmployeeAddress EmployeeAddress) throws Exception {
-		EmployeeAddress EmployeeAddressRes = employeeAddressRepositiry.findById(EmployeeAddress.getAddressId()).get();
-		if(Objects.isNull(EmployeeAddressRes))
+		EmployeeAddress employeeAddressRes = employeeAddressRepositiry.findById(EmployeeAddress.getAddressId()).get();
+		if(Objects.isNull(employeeAddressRes))
 		{
 			throw new Exception("Data Not Found");
 		}
 		
-		EmployeeAddressRes = employeeAddressRepositiry.save(EmployeeAddress);
+		employeeAddressRes = employeeAddressRepositiry.save(EmployeeAddress);
 		
-		return EmployeeAddressRes;
+		return employeeAddressRes;
 	}
 
 	@Override
@@ -50,6 +51,13 @@ public class EmployeeAddressServiceImple implements EmployeeAddressService {
 	public EmployeeAddress getByEmployeeAddressId(Integer EmployeeAddressId) {
 		
 		return employeeAddressRepositiry.findById(EmployeeAddressId).get();
+	}
+
+	@Override
+	public List<EmployeeAddress> getEmployeeAddressByEmployeeId(Integer empId) {
+		EmployeeDetails empDetail = new EmployeeDetails();
+		empDetail.setEmployeeId(empId);
+		return employeeAddressRepositiry.findByEmployeeId(empDetail);
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.emp.model.EmployeeDetails;
+import com.emp.model.EmployeeRoles;
 import com.emp.repo.EmployeeDetailsRepository;
 import com.emp.service.EmployeeDetailsService;
 
@@ -42,7 +43,7 @@ public class EmployeeDetailsServiceImple implements EmployeeDetailsService {
 
 	@Override
 	public List<EmployeeDetails> getAllEmployeeDetails() {
-		// TODO Auto-generated method stub
+	
 		return employeeDetailsRepository.findAll();
 	}
 
@@ -50,6 +51,24 @@ public class EmployeeDetailsServiceImple implements EmployeeDetailsService {
 	public EmployeeDetails getByEmployeeDetailsId(Integer employeeDetailsId) {
 		
 		return employeeDetailsRepository.findById(employeeDetailsId).get();
+	}
+
+	@Override
+	public List<EmployeeDetails> getAllEmployeesByRollName(String roleName) {
+		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeesByRollName(roleName);
+		return empList;
+	}
+
+	@Override
+	public List<EmployeeDetails> getAllEmployeeDetailsByProjectName(String projectName) {
+		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeeDetailsByProjectName(projectName);
+		return empList;
+	}
+
+	@Override
+	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(String roleName, String projectName) {
+		List<EmployeeDetails> empList = employeeDetailsRepository.getAllEmployeesByRollAndProjectName(roleName, projectName);
+		return empList;
 	}
 
 }

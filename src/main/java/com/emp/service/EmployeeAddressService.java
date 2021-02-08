@@ -16,4 +16,6 @@ public interface EmployeeAddressService {
 	public List<EmployeeAddress> getAllEmployeeAddress();
 	
 	public EmployeeAddress getByEmployeeAddressId(Integer employeeAddressId);
-}
+	
+	public List<EmployeeAddress> getEmployeeAddressByEmployeeId(Integer empId);
+} 

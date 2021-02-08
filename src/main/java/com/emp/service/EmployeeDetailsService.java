@@ -16,4 +16,11 @@ public interface EmployeeDetailsService {
 	public List<EmployeeDetails> getAllEmployeeDetails();
 	
 	public EmployeeDetails getByEmployeeDetailsId(Integer employeeDetailsId);
+
+	public List<EmployeeDetails> getAllEmployeesByRollName(String roleName);
+	
+	public List<EmployeeDetails> getAllEmployeeDetailsByProjectName(String projectName);
+
+	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(String roleName, String projectName);
+
 }

@@ -1,11 +1,13 @@
 package com.emp.serviceimpl;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.emp.model.EmployeeDetails;
 import com.emp.model.EmployeePayslipsModel;
 import com.emp.repo.EmployeePayslipsRepository;
 import com.emp.service.EmployeePayslipsService;
@@ -55,4 +57,22 @@ public class EmployeePayslipsServiceImpl implements EmployeePayslipsService {
 		return empPayslips;
 	}
 
+	@Override
+	public List<EmployeePayslipsModel> getEmployeePaySlipsByEmployeeId(Integer empId) {
+		List<EmployeePayslipsModel> empList = empPayslipsRepo.getEmployeePaySlipsByEmployeeId(empId);
+		return empList;
+	}
+
+	@Override
+	public List<EmployeePayslipsModel> getEmployeePayslipsByGivenDate(LocalDate payslipDate) {
+		List<EmployeePayslipsModel> empPs = empPayslipsRepo.findByDate(payslipDate);
+		return empPs;
+		
+	}
+
+	@Override
+	public List<EmployeePayslipsModel> getEmployeePaySlipsByFromDateAndToDate(LocalDate fromDate, LocalDate toDate) {
+		List<EmployeePayslipsModel> empPs = empPayslipsRepo.findByFromDateToDate(fromDate, toDate);
+		return empPs;
+	}
 }

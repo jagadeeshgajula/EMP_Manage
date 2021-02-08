@@ -50,4 +50,22 @@ public class EmployeeDetailsController {
 		EmployeeDetails EmployeeDetails = employeeDetailsService.getByEmployeeDetailsId(employeeDetailId);
 		return EmployeeDetails;
 	}
+	
+	@GetMapping("/getAllEmployeesByRollName")
+	public List<EmployeeDetails> getAllEmployeesByRollName(@RequestParam String rollName) {
+		return employeeDetailsService.getAllEmployeesByRollName(rollName);
+		
+	}
+	
+	@GetMapping("/getAllEmployeeDetailsByProjectName")
+	public List<EmployeeDetails> getAllEmployeeDetailsByProjectName(@RequestParam String projectName) {
+		return employeeDetailsService.getAllEmployeeDetailsByProjectName(projectName);
+		
+	}
+	
+	@GetMapping("/getAllEmployeesByRollAndProjectName")
+	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(@RequestParam String rollName, String projectName) {
+		return employeeDetailsService.getAllEmployeesByRollAndProjectName(rollName, projectName);
+		
+	}
 }
