@@ -2,6 +2,7 @@ package com.emp.service;
 
 import java.util.List;
 
+import com.emp.dto.EmployeeSearchParamsDTO;
 import com.emp.model.EmployeeDetails;
 
 public interface EmployeeDetailsService {
@@ -23,4 +24,5 @@ public interface EmployeeDetailsService {
 
 	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(String roleName, String projectName);
 
+	public List<EmployeeDetails> serachEmployees(EmployeeSearchParamsDTO searchParams);
 }

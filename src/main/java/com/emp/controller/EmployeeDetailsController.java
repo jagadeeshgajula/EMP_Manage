@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.emp.dto.EmployeeSearchParamsDTO;
 import com.emp.model.EmployeeDetails;
 import com.emp.service.EmployeeDetailsService;
 
@@ -67,5 +68,11 @@ public class EmployeeDetailsController {
 	public List<EmployeeDetails> getAllEmployeesByRollAndProjectName(@RequestParam String rollName, String projectName) {
 		return employeeDetailsService.getAllEmployeesByRollAndProjectName(rollName, projectName);
 		
+	}
+	
+	@PostMapping("/searchEmployeeDetails")
+	public List<EmployeeDetails> searchEmployeeDetails(@RequestBody EmployeeSearchParamsDTO searchParams) {
+		List<EmployeeDetails> empList = employeeDetailsService.serachEmployees(searchParams);
+		return empList;
 	}
 }
